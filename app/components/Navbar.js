@@ -1,12 +1,37 @@
-import { View, Text, ScrollView, Image, TextInput } from 'react-native'
-import React from 'react'
+import {
+  View,
+  Text,
+  ScrollView,
+  Image,
+  TextInput,
+  Pressable,
+  Button,
+} from 'react-native'
+import React, { useLayoutEffect } from 'react'
 import { Bars3Icon } from 'react-native-heroicons/outline'
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen'
+import { useNavigation } from 'expo-router'
 
 export default function Home() {
+  const navigation = useNavigation()
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <Pressable
+          onPress={() => {
+            navigation.openDrawer()
+          }}
+        >
+          <Bars3Icon height={hp(5)} width={hp(5)} color={'#333'} />
+        </Pressable>
+      ),
+    })
+  }, [])
+
   return (
     <View className='bg-white'>
       <ScrollView
@@ -21,10 +46,12 @@ export default function Home() {
           />
           <TextInput
             placeholder='جستجو در کاستومی'
-            className='border rounded-3xl border-red-500 '
+            className='border rounded-3xl '
             style={{ height: hp(5.5), flex: 1, textAlign: 'right' }}
           />
-          <Bars3Icon height={hp(4)} width={hp(4)} color={'#333'} />
+          <Pressable>
+            <Bars3Icon height={hp(5)} width={hp(5)} color={'#333'} />
+          </Pressable>
         </View>
       </ScrollView>
     </View>

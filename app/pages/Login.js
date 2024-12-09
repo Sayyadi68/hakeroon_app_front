@@ -69,11 +69,7 @@ export default function Login() {
             </Text>
           </TouchableOpacity>
         </View>
-        <Pressable
-          onPress={() => {
-            navigation.navigate('UserType')
-          }}
-        >
+        <Pressable onPress={() => navigation.navigate('userType')}>
           <Text className='text-[#A72F3B] font-bold text-lg'>
             ثبت نام در سایت
           </Text>

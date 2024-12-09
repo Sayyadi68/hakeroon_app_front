@@ -31,7 +31,7 @@ export default function Hero() {
         <TouchableOpacity
           className='flex flex-row justify-center items-center gap-2 bg-[#A72F3B] rounded-lg p-2'
           onPress={() => {
-            navigation.navigate('Login')
+            navigation.navigate('login')
           }}
         >
           <Text className='text-neutral-50'>شروع طراحی </Text>

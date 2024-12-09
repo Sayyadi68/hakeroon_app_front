@@ -9,10 +9,46 @@ import { Ionicons } from '@expo/vector-icons'
 import Home from '../pages/Home'
 import Login from '../pages/Login'
 import LoginUserType from '../pages/LoginUserType'
+import UserForm from '../pages/UserForm'
+import { createDrawerNavigator } from '@react-navigation/drawer'
 
-const Stack = createNativeStackNavigator()
+//================
+//  stack navigator
+//================
+
+const HomeStack = createNativeStackNavigator()
+function HomeStackGroup() {
+  return (
+    <HomeStack.Navigator>
+      <HomeStack.Screen
+        name='TabGroup'
+        component={TabGroup}
+        options={{ headerShown: false }}
+      />
+      <HomeStack.Screen
+        name='login'
+        component={Login}
+        options={{ headerShown: false }}
+      />
+      <HomeStack.Screen
+        name='userType'
+        component={LoginUserType}
+        options={{ headerShown: false }}
+      />
+      <HomeStack.Screen
+        name='userForm'
+        component={UserForm}
+        options={{ headerShown: false }}
+      />
+    </HomeStack.Navigator>
+  )
+}
+
+//================
+//  Tab navigator
+//================
+
 const Tab = createBottomTabNavigator()
-
 function TabGroup() {
   return (
     <Tab.Navigator
@@ -28,31 +64,48 @@ function TabGroup() {
           }
           return <Ionicons name={iconName} size={size} color={color} />
         },
+        headerShown: false,
+        tabBarActiveTintColor: '#1DA1F2',
+        tabBarInactiveTintColor: 'gray',
       })}
     >
-      <Tab.Screen name='پروفایل' component={LoginUserType} />
+      <Tab.Screen
+        name='پروفایل'
+        component={UserForm}
+        options={{ headerShown: false }}
+      />
       <Tab.Screen name='تنظیمات' component={Login} />
       <Tab.Screen name='خانه' component={Home} />
     </Tab.Navigator>
   )
 }
 
-function Navigation() {
-  return <TabGroup />
-  // <NavigationContainer>
-  {
-    /* <Stack.Navigator
-        initialRouteName='Home'
-        screenOptions={{ headerShown: false }}
-      >
-        <Stack.Screen name='Home' component={Home} />
-        <Stack.Screen name='Login' component={Login} />
-        <Stack.Screen name='UserType' component={LoginUserType} />
-      </Stack.Navigator> */
-  }
-  {
-    /* </NavigationContainer> */
-  }
+//===================
+//  Drawer navigator
+//===================
+
+const Drawer = createDrawerNavigator()
+function DrawerGroup() {
+  return (
+    <Drawer.Navigator screenLayout={{}}>
+      <Drawer.Screen
+        name='HomeStackGroup'
+        component={HomeStackGroup}
+        options={{ headerShown: false }}
+      />
+      <Drawer.Screen
+        name='Home'
+        component={Home}
+        options={{ headerShown: true }}
+      />
+    </Drawer.Navigator>
+  )
 }
 
+function Navigation() {
+  return <DrawerGroup />
+}
+{
+  /* <HomeStackGroup /> */
+}
 export default Navigation
