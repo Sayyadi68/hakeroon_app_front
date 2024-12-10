@@ -87,7 +87,16 @@ function TabGroup() {
 const Drawer = createDrawerNavigator()
 function DrawerGroup() {
   return (
-    <Drawer.Navigator screenLayout={{}}>
+    <Drawer.Navigator
+      screenOptions={{
+        drawerPosition: 'right',
+        drawerStyle: {
+          right: 0,
+          left: null
+        },
+      }}
+      defaultStatus="closed"
+    >
       <Drawer.Screen
         name='HomeStackGroup'
         component={HomeStackGroup}

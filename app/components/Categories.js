@@ -27,7 +27,7 @@ const categories = [
 export default function Categories() {
   return (
     <View style={{ direction: 'rtl' }} className='px-4'>
-      <Text className='font-extrabold text-2xl pt-8 '>دسته بندی محصولات</Text>
+      <Text className='text-2xl pt-8 font-extrabold' >دسته بندی محصولات</Text>
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
