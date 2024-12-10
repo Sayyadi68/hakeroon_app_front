@@ -18,8 +18,6 @@ import { useNavigation } from '@react-navigation/native'
 export default function Home() {
   const navigation = useNavigation()
 
-=======
->>>>>>> 82c3d2ba47966a5eea0026948253f48848f9e8c4
   return (
     <View className='bg-white'>
       <ScrollView
@@ -37,9 +35,11 @@ export default function Home() {
             className='border rounded-3xl '
             style={{ height: hp(5.5), flex: 1, textAlign: 'right' }}
           />
-          <Pressable onPress={() => {
-            navigation.openDrawer()
-          }}>
+          <Pressable
+            onPress={() => {
+              navigation.openDrawer()
+            }}
+          >
             <Bars3Icon height={hp(5)} width={hp(5)} color={'#333'} />
           </Pressable>
         </View>
