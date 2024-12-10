@@ -94,10 +94,13 @@ function DrawerGroup() {
   return (
     <Drawer.Navigator
       screenOptions={{
-        headerShown: false,
-        // drawerStyle: { flexDirection: 'row-reverse' },
         drawerPosition: 'right',
+        drawerStyle: {
+          right: 0,
+          left: null,
+        },
       }}
+      defaultStatus='closed'
     >
       <Drawer.Screen
         name='HomeStackGroup'

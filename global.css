@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  .font-thin {
+    font-family: 'Estedad-Thin';
+  }
+  .font-extralight {
+    font-family: 'Estedad-ExtraLight';
+  }
+  .font-light {
+    font-family: 'Estedad-Light';
+  }
+  .font-normal {
+    font-family: 'Estedad-Regular';
+  }
+  .font-medium {
+    font-family: 'Estedad-Medium';
+  }
+  .font-semibold {
+    font-family: 'Estedad-SemiBold';
+  }
+  .font-bold {
+    font-family: 'Estedad-Bold';
+  }
+  .font-extrabold {
+    font-family: 'Estedad-ExtraBold';
+  }
+  .font-black {
+    font-family: 'Estedad-Black';
+  }
+}

@@ -36,6 +36,17 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "fonts": {
+      "Estedad-Black": "./assets/fonts/Estedad-Black.ttf",
+      "Estedad-Bold": "./assets/fonts/Estedad-Bold.ttf",
+      "Estedad-ExtraBold": "./assets/fonts/Estedad-ExtraBold.ttf",
+      "Estedad-ExtraLight": "./assets/fonts/Estedad-ExtraLight.ttf",
+      "Estedad-Light": "./assets/fonts/Estedad-Light.ttf",
+      "Estedad-Medium": "./assets/fonts/Estedad-Medium.ttf",
+      "Estedad-Regular": "./assets/fonts/Estedad-Regular.ttf",
+      "Estedad-SemiBold": "./assets/fonts/Estedad-SemiBold.ttf",
+      "Estedad-Thin": "./assets/fonts/Estedad-Thin.ttf"
     }
   }
 }
