@@ -32,7 +32,7 @@ export default function Categories() {
         horizontal
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={{ paddingHorizontal: 15 }}
-        style={{ flexDirection: 'row-reverse', flexGrow: 0 }}
+        style={{ flexDirection: 'row-reverse' }}
       >
         {categories.map((cat) => {
           const { id, name, image } = cat

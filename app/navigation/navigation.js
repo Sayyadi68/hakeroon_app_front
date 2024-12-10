@@ -1,16 +1,17 @@
 import * as React from 'react'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { NavigationContainer } from '@react-navigation/native'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
-import FontAwesome from '@expo/vector-icons/FontAwesome'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { createDrawerNavigator } from '@react-navigation/drawer'
+
 import { Ionicons } from '@expo/vector-icons'
 
 import Home from '../pages/Home'
 import Login from '../pages/Login'
 import LoginUserType from '../pages/LoginUserType'
 import UserForm from '../pages/UserForm'
-import { createDrawerNavigator } from '@react-navigation/drawer'
+import DesignPage from '../pages/DesignPage'
+import ShoppingBasket from '../pages/ShoppingBascket'
 
 //================
 //  stack navigator
@@ -57,10 +58,12 @@ function TabGroup() {
           let iconName
           if (route.name === 'خانه') {
             iconName = focused ? 'home' : 'home-outline'
-          } else if (route.name === 'تنظیمات') {
-            iconName = focused ? 'settings' : 'settings-outline'
+          } else if (route.name === 'طراحی سفارشی') {
+            iconName = focused ? 'brush' : 'brush-outline'
+          } else if (route.name === 'سبد خرید') {
+            iconName = focused ? 'basket' : 'basket-outline'
           } else if (route.name === 'پروفایل') {
-            iconName = focused ? 'notifications' : 'notifications-outline'
+            iconName = focused ? 'happy' : 'happy-outline'
           }
           return <Ionicons name={iconName} size={size} color={color} />
         },
@@ -74,7 +77,9 @@ function TabGroup() {
         component={UserForm}
         options={{ headerShown: false }}
       />
-      <Tab.Screen name='تنظیمات' component={Login} />
+      <Tab.Screen name='سبد خرید' component={ShoppingBasket} />
+
+      <Tab.Screen name='طراحی سفارشی' component={DesignPage} />
       <Tab.Screen name='خانه' component={Home} />
     </Tab.Navigator>
   )
@@ -87,16 +92,22 @@ function TabGroup() {
 const Drawer = createDrawerNavigator()
 function DrawerGroup() {
   return (
-    <Drawer.Navigator screenLayout={{}}>
+    <Drawer.Navigator
+      screenOptions={{
+        headerShown: false,
+        // drawerStyle: { flexDirection: 'row-reverse' },
+        drawerPosition: 'right',
+      }}
+    >
       <Drawer.Screen
         name='HomeStackGroup'
         component={HomeStackGroup}
-        options={{ headerShown: false }}
+        // options={{ headerShown: false }}
       />
       <Drawer.Screen
-        name='Home'
-        component={Home}
-        options={{ headerShown: true }}
+        name='login'
+        component={Login}
+        // options={{ headerShown: true }}
       />
     </Drawer.Navigator>
   )
@@ -105,7 +116,5 @@ function DrawerGroup() {
 function Navigation() {
   return <DrawerGroup />
 }
-{
-  /* <HomeStackGroup /> */
-}
+
 export default Navigation

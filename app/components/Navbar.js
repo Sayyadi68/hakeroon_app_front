@@ -18,19 +18,19 @@ import { useNavigation } from 'expo-router'
 export default function Home() {
   const navigation = useNavigation()
 
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      headerRight: () => (
-        <Pressable
-          onPress={() => {
-            navigation.openDrawer()
-          }}
-        >
-          <Bars3Icon height={hp(5)} width={hp(5)} color={'#333'} />
-        </Pressable>
-      ),
-    })
-  }, [])
+  // useLayoutEffect(() => {
+  //   navigation.setOptions({
+  //     headerRight: () => (
+  //       <Pressable
+  //         onPress={() => {
+  //           navigation.openDrawer()
+  //         }}
+  //       >
+  //         <Bars3Icon height={hp(5)} width={hp(5)} color={'#333'} />
+  //       </Pressable>
+  //     ),
+  //   })
+  // }, [])
 
   return (
     <View className='bg-white'>
@@ -49,7 +49,11 @@ export default function Home() {
             className='border rounded-3xl '
             style={{ height: hp(5.5), flex: 1, textAlign: 'right' }}
           />
-          <Pressable>
+          <Pressable
+            onPress={() => {
+              navigation.openDrawer()
+            }}
+          >
             <Bars3Icon height={hp(5)} width={hp(5)} color={'#333'} />
           </Pressable>
         </View>
