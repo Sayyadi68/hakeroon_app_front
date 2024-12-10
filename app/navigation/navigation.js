@@ -95,6 +95,7 @@ function DrawerGroup() {
     <Drawer.Navigator
       screenOptions={{
         drawerPosition: 'right',
+        headerShown: false,
         drawerStyle: {
           right: 0,
           left: null,
