@@ -1,80 +1,108 @@
-import {
-  View,
-  Text,
-  Image,
-  StatusBar,
-  TextInput,
-  Button,
-  TouchableOpacity,
-  Pressable,
-} from 'react-native'
-import React from 'react'
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from 'react-native-responsive-screen'
-import { useNavigation } from 'expo-router'
+import React, { useState } from "react";
+import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
+import "nativewind";
 
-export default function Login() {
-  const navigation = useNavigation()
+const SignupScreen = () => {
+
+  const [phone, setPhone] = useState("");
+  
+  const [code, setCode] = useState("");
+
+
+
+  const handleGetCode = () => {
+    // Logic to get verification code
+    console.log("Getting verification code for", phone);
+  };
+
+  const handleSendCode = () => {
+    // Logic to send verification code
+    console.log("Sending code", code);
+  };
+
   return (
-    <View className='flex-1 items-center'>
-      <StatusBar barStyle={'dark-content'} />
+    <View className="flex-1 flex-col  items-center justify-between bg-white p-5">
       <Image
-        source={require('../../assets/images/Logo-Type.png')}
-        className='mt-32 mb-12'
+        className="mt-10"
+        resizeMode="cover"
+        source={require("../../assets/images/login_vector.png")}
       />
-      <Text className='text-neutral-600 text-2xl font-semibold mb-16'>
-        ورود | ثبت نام
-      </Text>
-      <View className='flex items-center'>
-        {/* Username */}
-        <View
-          className='flex items-end gap-y-2'
-          style={{ height: hp(10), width: wp(80) }}
-        >
-          <Text className='text-xl font-bold '>نام کاربری</Text>
-          <TextInput
-            className='border border-neutral-600 rounded-lg px-4 text-right w-full'
-            style={{ height: hp(5) }}
-          />
-        </View>
-        {/* Password */}
-        <View
-          className='flex items-end gap-y-2'
-          style={{ height: hp(10), width: wp(80) }}
-        >
-          <Text className='text-xl font-bold '>کلمه عبور</Text>
-          <TextInput
-            className='border border-neutral-600 rounded-lg px-4 text-right w-full'
-            style={{ height: hp(5) }}
-          />
-        </View>
-        <Text className='mt-12 font-bold '>
-          ورود و عضویت شما به منزله پذیرفتن قوانین و مقررات می باشد.
+
+      <View className="w-full">
+        <Text className="w-full text-[30px] font-bold text-right mt-5">
+          سلام! برای شروع ثبت نام کنید
         </Text>
 
-        <View
-          style={{ width: wp(80), marginTop: hp(5) }}
-          className='flex gap-4 pb-8'
-        >
-          <TouchableOpacity className='bg-[#A72F3B] w-full rounded-lg py-4 '>
-            <Text className='text-center font-bold text-neutral-50 text-lg'>
-              ورود به سایت{' '}
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity className='border border-neutral-800 w-full rounded-lg py-4 '>
-            <Text className='text-center font-bold text-neutral-800 text-lg'>
-              ورود با حساب گوگل
-            </Text>
-          </TouchableOpacity>
+        <TextInput
+          className="w-full border h-14 border-gray-300 rounded-lg p-2 mb-4 text-right"
+          placeholder="شماره تماس خود را وارد کنید"
+          value={phone}
+          onChangeText={setPhone}
+          keyboardType="phone-pad"
+        />
+        
+        <Text className="w-full text-sm font-bold text-left color-blue-600">ادیت شماره تلفن</Text>
+
+
+        <Text className="w-full text-sm font-bold text-right mt-5">کد ارسالی به شماره موبایل را وارد کنید</Text>
+
+        <View className="flex flex-row gap-x-4">
+          <TextInput
+            className="w-[60px] h-14 border border-gray-300 rounded-lg p-2 mb-4 text-center"
+            value={code}
+            onChangeText={setCode}
+            keyboardType="numeric"
+          />
+          <TextInput
+            className="w-[60px] h-14 border border-gray-300 rounded-lg p-2 mb-4 text-center"
+            value={code}
+            onChangeText={setCode}
+            keyboardType="numeric"
+          />
+          <TextInput
+            className="w-[60px] h-14 border border-gray-300 rounded-lg p-2 mb-4 text-center"
+            value={code}
+            onChangeText={setCode}
+            keyboardType="numeric"
+          />
+          <TextInput
+            className="w-[60px] h-14 border border-gray-300 rounded-lg p-2 mb-4 text-center"
+            value={code}
+            onChangeText={setCode}
+            keyboardType="numeric"
+          />
+          <TextInput
+            className="w-[60px] h-14 border border-gray-300 rounded-lg p-2 mb-4 text-center"
+            value={code}
+            onChangeText={setCode}
+            keyboardType="numeric"
+          />
+          <TextInput
+            className="w-[60px] h-14 border border-gray-300 rounded-lg p-2 mb-4 text-center"
+            value={code}
+            onChangeText={setCode}
+            keyboardType="numeric"
+          />
         </View>
-        <Pressable onPress={() => navigation.navigate('userType')}>
-          <Text className='text-[#A72F3B] font-bold text-lg'>
-            ثبت نام در سایت
-          </Text>
-        </Pressable>
       </View>
+
+      <TouchableOpacity
+        className="w-full bg-orange-500 py-4 rounded-lg items-center mb-3"
+        onPress={handleGetCode}
+      >
+        <Text className="text-white font-bold">دریافت کد تایید</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        className="w-full border-orange-500 border-2 py-4 rounded-lg items-center"
+        onPress={handleSendCode}
+      >
+        <Text className=" text-orange-500 font-bold">ارسال کد تایید</Text>
+      </TouchableOpacity>
+
+
     </View>
-  )
-}
+  );
+};
+
+export default SignupScreen;
