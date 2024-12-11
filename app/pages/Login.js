@@ -5,10 +5,13 @@ import "nativewind";
 const SignupScreen = () => {
 
   const [phone, setPhone] = useState("");
-  
+
   const [code, setCode] = useState("");
 
 
+
+
+  
 
   const handleGetCode = () => {
     // Logic to get verification code
