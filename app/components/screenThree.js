@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const WelcomeScreenThree = () => {
   // const [selectedValue, setSelectedValue] = useState("3");
@@ -51,7 +52,10 @@ const WelcomeScreenThree = () => {
 
       <TouchableOpacity
         className="w-full bg-[#ff6500] rounded-full self-end"
-        onPress={() => navigation.navigate("Home")} // استفاده از ناوبری
+        onPress={() => {
+          navigation.navigate("Home");
+          // navigation.canGoBack(false);
+        }}
       >
         <Text className="text-white text-2xl text-center font-bold p-3.5">
           شروع

@@ -3,7 +3,7 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const WelcomeScreen = () => {
-  const [selectedValue, setSelectedValue] = useState("1");
+  // const [selectedValue, setSelectedValue] = useState("1");
   const navigation = useNavigation();
 
   return (
