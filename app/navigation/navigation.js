@@ -12,6 +12,7 @@ import LoginUserType from '../pages/LoginUserType'
 import UserForm from '../pages/UserForm'
 import DesignPage from '../pages/DesignPage'
 import ShoppingBasket from '../pages/ShoppingBascket'
+import ScreenOne from '../pages/screenOne'
 
 //================
 //  stack navigator
@@ -39,6 +40,11 @@ function HomeStackGroup() {
       <HomeStack.Screen
         name='userForm'
         component={UserForm}
+        options={{ headerShown: false }}
+      />
+      <HomeStack.Screen
+        name='screenOne'
+        component={ScreenOne}
         options={{ headerShown: false }}
       />
     </HomeStack.Navigator>
