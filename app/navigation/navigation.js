@@ -7,7 +7,6 @@ import { Ionicons } from '@expo/vector-icons'
 
 import Home from '../pages/Home'
 import Login from '../pages/Login'
-import LoginUserType from '../pages/LoginUserType'
 import UserForm from '../pages/UserForm'
 import DesignPage from '../pages/DesignPage'
 import ShoppingBasket from '../pages/ShoppingBascket'
@@ -34,8 +33,8 @@ function HomeStackGroup() {
         options={{ headerShown: false }}
       />
       <HomeStack.Screen
-        name='userType'
-        component={LoginUserType}
+        name='Home'
+        component={Home}
         options={{ headerShown: false }}
       />
       <HomeStack.Screen
