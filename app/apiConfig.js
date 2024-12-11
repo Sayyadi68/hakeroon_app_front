@@ -1,14 +1,14 @@
-// import axios from 'react-native-axios/lib/axios';
+import axios from 'react-native-axios/lib/axios';
 // // import AsyncStorage from '@react-native-async-storage/async-storage';
 // import { navigate } from '../screens/NavigationService';
 // import { handleApiError } from '../utils/errorHandler';
 
-// const axiosInstance = axios.create({
-//   baseURL: 'https://api.puyar-projects.ir/',
-//   headers: {
-//     'Content-Type': 'application/json',
-//   },
-// });
+const axiosInstance = axios.create({
+  baseURL: 'https://api.puyar-projects.ir/',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
 
 // // // Function to get a token from AsyncStorage
 // // const getToken = async () => {
@@ -69,4 +69,4 @@
 // //   },
 // // );
 
-// export default axiosInstance;
+export default axiosInstance;

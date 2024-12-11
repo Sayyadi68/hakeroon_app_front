@@ -3,7 +3,6 @@ import * as React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createDrawerNavigator } from '@react-navigation/drawer'
-
 import { Ionicons } from '@expo/vector-icons'
 
 import Home from '../pages/Home'
@@ -13,6 +12,8 @@ import UserForm from '../pages/UserForm'
 import DesignPage from '../pages/DesignPage'
 import ShoppingBasket from '../pages/ShoppingBascket'
 import ScreenOne from '../pages/screenOne'
+import ScreenTwo from '../pages/screenTwo'
+import ScreenThree from '../pages/screenThree'
 
 //================
 //  stack navigator
@@ -21,7 +22,7 @@ import ScreenOne from '../pages/screenOne'
 const HomeStack = createNativeStackNavigator()
 function HomeStackGroup() {
   return (
-    <HomeStack.Navigator>
+    <HomeStack.Navigator initialRouteName="screenOne">
       <HomeStack.Screen
         name='TabGroup'
         component={TabGroup}
@@ -45,6 +46,16 @@ function HomeStackGroup() {
       <HomeStack.Screen
         name='screenOne'
         component={ScreenOne}
+        options={{ headerShown: false }}
+      />
+      <HomeStack.Screen
+        name='screenTwo'
+        component={ScreenTwo}
+        options={{ headerShown: false }}
+      />
+      <HomeStack.Screen
+        name='screenThree'
+        component={ScreenThree}
         options={{ headerShown: false }}
       />
     </HomeStack.Navigator>
@@ -71,7 +82,7 @@ function TabGroup() {
           } else if (route.name === 'پروفایل') {
             iconName = focused ? 'happy' : 'happy-outline'
           } else if (route.name === 'صفحه راهنما') {
-            iconName = focused ? 'screenOne' : 'home-outline'
+            iconName = focused ? 'help' : 'help-outline'
           }
           return <Ionicons name={iconName} size={size} color={color} />
         },
@@ -90,6 +101,8 @@ function TabGroup() {
       <Tab.Screen name='طراحی سفارشی' component={DesignPage} />
       <Tab.Screen name='خانه' component={Home} />
       <Tab.Screen name='صفحه راهنما' component={ScreenOne} />
+      <Tab.Screen name='صفحه راهنما2' component={ScreenTwo} />
+      <Tab.Screen name='صفحه راهنما3' component={ScreenThree} />
     </Tab.Navigator>
   )
 }

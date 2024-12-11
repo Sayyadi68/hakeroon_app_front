@@ -1,10 +1,10 @@
-import ScreenOne from '../components/screenOne'
+import ScreenThree from '../components/screenThree'
 import { View } from 'react-native'
 
-export default function ScreenOnePage() {
+export default function ScreenThreePage() {
   return (
     <View className='flex-1 justify-between bg-white'>
-      <ScreenOne/> 
+      <ScreenThree/> 
     </View>
   )
 }

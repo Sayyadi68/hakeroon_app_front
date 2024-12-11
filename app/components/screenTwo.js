@@ -2,18 +2,19 @@ import React, { useState } from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { Link } from "expo-router";
 
-const WelcomeScreen = () => {
-  const [selectedValue, setSelectedValue] = useState("1");
+const WelcomeScreenTwo = () => {
+  const [selectedValue, setSelectedValue] = useState("2");
 
   return (
-    <View className="flex flex-col justify-center items-center bg-white px-4">
+    <View className="flex-1 justify-center items-center bg-white px-4">
       {/* تصویر */}
       <View className="flex flex-col justify-center items-center h-[clac(100vh-10px)] gap-2">
         <Image
-          source={require("../../assets/images/screenOne.png")}
+          source={require("../../assets/images/screenTwo.png")}
           className="w-[300px] h-[300px]"
           resizeMode="cover"
         />
+
         <Image
           source={require("../../assets/images/help.png")}
           className="w-dvw h-[188px]"
@@ -23,13 +24,12 @@ const WelcomeScreen = () => {
         {/* توضیحات */}
         <View className="items-center mt-4">
           <Text className="text-[22px] font-bold mb-2 text-center">
-          چجوری با ورزشیار کار کنیم؟
+            چجوری با ورزشیار کار کنیم؟
           </Text>
           <Text className="text-base text-gray-600 text-center">
-          زمانی که وارد نرم افزار ورزشیار شدید 
-در ابتدا با دسته بندی ها مواجه خواهید شد 
-شما میتوانید با انتخاب دسته بندی مورد نظرتون وارد همون بخش بشید و سالن ها و باشگاه های مورد نظر رو پیدا کنید 
-
+            زمانی که وارد نرم افزار ورزشیار شدید در ابتدا با دسته بندی ها مواجه
+            خواهید شد شما میتوانید با انتخاب دسته بندی مورد نظرتون وارد همون بخش
+            بشید و سالن ها و باشگاه های مورد نظر رو پیدا کنید
           </Text>
         </View>
 
@@ -59,4 +59,4 @@ const WelcomeScreen = () => {
   );
 };
 
-export default WelcomeScreen;
+export default WelcomeScreenTwo;
