@@ -9,10 +9,6 @@ const SignupScreen = () => {
   const [code, setCode] = useState("");
 
 
-
-
-  
-
   const handleGetCode = () => {
     // Logic to get verification code
     console.log("Getting verification code for", phone);
