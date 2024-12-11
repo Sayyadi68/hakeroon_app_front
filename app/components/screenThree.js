@@ -36,7 +36,7 @@ const WelcomeScreenThree = () => {
           </View>
 
           {/* RadioGroup برای نشانگر وضعیت */}
-          {/* <View className="flex-row my-8">
+          <View className="flex-row my-8">
             {["1", "2", "3"].map((value) => (
               <TouchableOpacity
                 key={value}
@@ -46,14 +46,14 @@ const WelcomeScreenThree = () => {
                 }`}
               />
             ))}
-          </View> */}
+          </View>
         </View>
       </View>
 
       <TouchableOpacity
         className="w-full bg-[#ff6500] rounded-full self-end"
         onPress={() => {
-          navigation.navigate("Home");
+          navigation.replace("Home");
           // navigation.canGoBack(false);
         }}
       >

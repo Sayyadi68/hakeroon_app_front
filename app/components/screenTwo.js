@@ -34,7 +34,7 @@ const WelcomeScreenTwoPage = () => {
           </View>
 
           {/* RadioGroup برای نشانگر وضعیت */}
-          {/* <View className="flex-row my-8">
+          <View className="flex-row my-8">
             {["1", "2", "3"].map((value) => (
               <TouchableOpacity
                 key={value}
@@ -44,7 +44,7 @@ const WelcomeScreenTwoPage = () => {
                 }`}
               />
             ))}
-          </View> */}
+          </View>
         </View>
       </View>
 

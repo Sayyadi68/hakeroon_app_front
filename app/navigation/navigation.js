@@ -91,7 +91,7 @@ function TabGroup() {
         headerShown: false,
         tabBarActiveTintColor: "#1DA1F2",
         tabBarInactiveTintColor: "gray",
-      })}
+      })} 
     >
       <Tab.Screen name="صفحه اصلی" component={Home} />
       <Tab.Screen name="طراحی سفارشی" component={DesignPage} />
@@ -126,7 +126,7 @@ function DrawerGroup() {
 }
 
 function Navigation() {
-  return <DrawerGroup />;
+  return <TabGroup />;
 }
 
 export default Navigation;
