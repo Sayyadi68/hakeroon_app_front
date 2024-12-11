@@ -70,6 +70,8 @@ function TabGroup() {
             iconName = focused ? 'basket' : 'basket-outline'
           } else if (route.name === 'پروفایل') {
             iconName = focused ? 'happy' : 'happy-outline'
+          } else if (route.name === 'صفحه راهنما') {
+            iconName = focused ? 'screenOne' : 'home-outline'
           }
           return <Ionicons name={iconName} size={size} color={color} />
         },
@@ -87,6 +89,7 @@ function TabGroup() {
 
       <Tab.Screen name='طراحی سفارشی' component={DesignPage} />
       <Tab.Screen name='خانه' component={Home} />
+      <Tab.Screen name='صفحه راهنما' component={ScreenOne} />
     </Tab.Navigator>
   )
 }

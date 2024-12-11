@@ -23,12 +23,12 @@ const WelcomeScreen = () => {
       </View>
 
       {/* RadioGroup برای نشانگر وضعیت */}
-      <View className="flex-row mt-4 space-x-2">
+      <View className="flex-row my-8">
         {["1", "2", "3"].map((value) => (
           <TouchableOpacity
             key={value}
             onPress={() => setSelectedValue(value)}
-            className={`w-4 h-4 rounded-full ${
+            className={`w-4 h-4 rounded-full mx-2 ${
               selectedValue === value ? "bg-orange-400" : "bg-gray-300"
             }`}
           />
@@ -36,8 +36,8 @@ const WelcomeScreen = () => {
       </View>
 
       {/* دکمه ادامه */}
-      <Link href="/(tabs)/screenTwo">
-        <TouchableOpacity className="bg-orange-400 mt-6 py-3 px-8 rounded-full">
+      <Link href="/(tabs)/screenTwo" className="w-full">
+        <TouchableOpacity className="w-full bg-orange-400 mt-6 py-8 px-8 rounded-full">
           <Text className="text-white text-base font-bold">ادامه</Text>
         </TouchableOpacity>
       </Link>
