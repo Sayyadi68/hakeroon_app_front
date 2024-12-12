@@ -8,11 +8,12 @@ import { Ionicons } from "@expo/vector-icons";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import UserForm from "../pages/UserForm";
-import DesignPage from "../pages/DesignPage";
+import SalonPage from "../pages/SalonsPage";
 import ShoppingBasket from "../pages/ShoppingBascket";
 import ScreenOne from "../pages/screenOne";
 import ScreenTwo from "../pages/screenTwo";
 import ScreenThree from "../components/screenThree";
+import TicketData from "../pages/TicketData";
 
 //================
 // Stack Navigator
@@ -25,11 +26,6 @@ function HomeStackGroup() {
       <HomeStack.Screen
         name="TabGroup"
         component={TabGroup}
-        options={{ headerShown: false }}
-      />
-      <HomeStack.Screen
-        name="Home"
-        component={Home}
         options={{ headerShown: false }}
       />
       <HomeStack.Screen
@@ -94,9 +90,9 @@ function TabGroup() {
       })}
     >
       <Tab.Screen name="صفحه اصلی" component={Home} />
-      <Tab.Screen name="سالن ها" component={DesignPage} />
+      <Tab.Screen name="سالن ها" component={SalonPage} />
       <Tab.Screen name="سبد خرید" component={ShoppingBasket} />
-      <Tab.Screen name="پروفایل" component={Login} />
+      <Tab.Screen name="پروفایل" component={TicketData} />
     </Tab.Navigator>
   );
 }
@@ -129,6 +125,7 @@ function Navigation() {
   return (
     <>
       <TabGroup />
+      {/* <HomeStack /> */}
       {/* <DrawerGroup /> */}
     </>
   );

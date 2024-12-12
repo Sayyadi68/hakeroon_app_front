@@ -1,9 +1,16 @@
 import React, { useState } from "react";
-import { ScrollView, TouchableOpacity, View, Text, Image } from "react-native";
+import {
+  ScrollView,
+  TouchableOpacity,
+  View,
+  Text,
+  Image,
+  Pressable,
+} from "react-native";
 // import LinearGradient from "react-native-linear-gradient";
 
 // کامپوننت TopSection برای تصویر بالای صفحه
-const TopSection = () => {
+export const TopSection = () => {
   return (
     <View className="w-full h-[35vh] flex items-center">
       <Image
@@ -31,7 +38,6 @@ export function ToopiCard() {
           className="w-44 h-44"
           resizeMode="contain"
         />
-        {/* <Text className="text-center text-xl font-bold">دسته بندی</Text> */}
         <View className="flex-1 items-end justify-between">
           <View className="flex items-end w-48">
             <Text
@@ -48,19 +54,23 @@ export function ToopiCard() {
               باشگاه اسب سواری رهرو جایزه 3 روز اسب سواری رایگان دریافت کنید
             </Text>
           </View>
-          <TouchableOpacity
+          <Pressable
             className={`flex-row items-center px-5 py-2 rounded-full ${
               active ? "bg-white" : "bg-white"
             }`}
+            onPress={() => {
+              // عملکردی که هنگام کلیک روی دکمه اجرا می شود
+              setActive(!active);
+            }}
           >
             <Text
               className={`text-lg font-bold ml-2 ${
-                active ? "text-black" : "text-black"
+                active ? "text-black" : "text-gray-700"
               }`}
             >
               ثبت نام
             </Text>
-          </TouchableOpacity>
+          </Pressable>
         </View>
         {/* <Text className="text-center text-xl font-bold">دسته بندی</Text> */}
       </View>
@@ -83,7 +93,6 @@ export default function Home() {
           horizontal
           showsHorizontalScrollIndicator={false}
           className="w-full -mb-4"
- 
         >
           <View className="flex-row px-4">
             <Image
