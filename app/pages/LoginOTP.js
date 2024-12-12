@@ -50,12 +50,6 @@ const SignupScreen = () => {
         <Text className="text-white font-bold">دریافت کد تایید</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity
-        className="w-full bg-orange-500 py-4 rounded-lg items-center"
-        onPress={handleSendCode}
-      >
-        <Text className="text-white font-bold">ارسال کد تایید</Text>
-      </TouchableOpacity>
     </View>
   );
 };

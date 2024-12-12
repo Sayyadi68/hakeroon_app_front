@@ -45,17 +45,17 @@ function HomeStackGroup() {
       <HomeStack.Screen
         name="screenOne"
         component={ScreenOne}
-        options={{ headerShown: false }}
+        options={{ headerShown: true }}
       />
       <HomeStack.Screen
         name="screenTwo"
         component={ScreenTwo}
-        options={{ headerShown: false }}
+        options={{ headerShown: true }}
       />
       <HomeStack.Screen
         name="screenThree"
         component={ScreenThree}
-        options={{ headerShown: false }}
+        options={{ headerShown: true }}
       />
     </HomeStack.Navigator>
   );
@@ -76,27 +76,27 @@ function TabGroup() {
             case "صفحه اصلی":
               iconName = focused ? "home" : "home-outline";
               break;
-            case "طراحی سفارشی":
-              iconName = focused ? "brush" : "brush-outline";
+            case "سالن ها":
+              iconName = focused ? "football" : "football-outline";
               break;
             case "سبد خرید":
-              iconName = focused ? "basket" : "basket-outline";
+              iconName = focused ? "ticket" : "ticket-outline";
               break;
             case "پروفایل":
-              iconName = focused ? "happy" : "happy-outline";
+              iconName = focused ? "person" : "person-outline";
               break;
           }
           return <Ionicons name={iconName} size={size} color={color} />;
         },
         headerShown: false,
-        tabBarActiveTintColor: "#1DA1F2",
+        tabBarActiveTintColor: "#f97316",
         tabBarInactiveTintColor: "gray",
-      })} 
+      })}
     >
       <Tab.Screen name="صفحه اصلی" component={Home} />
-      <Tab.Screen name="طراحی سفارشی" component={DesignPage} />
+      <Tab.Screen name="سالن ها" component={DesignPage} />
       <Tab.Screen name="سبد خرید" component={ShoppingBasket} />
-      <Tab.Screen name="پروفایل" component={UserForm} />
+      <Tab.Screen name="پروفایل" component={Login} />
     </Tab.Navigator>
   );
 }
@@ -119,14 +119,19 @@ function DrawerGroup() {
       }}
       defaultStatus="closed"
     >
-      <Drawer.Screen name="HomeStackGroup" component={HomeStackGroup} />
-      <Drawer.Screen name="login" component={Login} />
+      <Drawer.Screen name="Home" component={HomeStackGroup} />
+      <Drawer.Screen name="Login" component={Login} />
     </Drawer.Navigator>
   );
 }
 
 function Navigation() {
-  return <TabGroup />;
+  return (
+    <>
+      <TabGroup />
+      {/* <DrawerGroup /> */}
+    </>
+  );
 }
 
 export default Navigation;
